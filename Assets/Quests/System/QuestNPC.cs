@@ -19,7 +19,7 @@ namespace Quests.System
             }
             else if (quests.Count > 0 && current < quests.Count)
             {
-                QuestGivingUI.Instance.SetupQuest(quests[current], this);
+                //QuestGivingUI.Instance.SetupQuest(quests[current], this);
             }
         
             PlayerInteraction.Instance.StopInteractive();
@@ -43,7 +43,7 @@ namespace Quests.System
 
         void ThanksMessage()
         {
-            QuestGivingUI.Instance.ThankYou(quests[current]);
+            //QuestGivingUI.Instance.ThankYou(quests[current]);
             FinishQuest();
         }
 

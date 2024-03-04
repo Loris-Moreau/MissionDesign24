@@ -26,13 +26,13 @@ namespace Quests.System
         {
             questsProgress.Add(quest);
             GameObject panel = Instantiate(questPanelPrefab, questParent);
-            panel.GetComponent<QuestPanel>().SetupQuest(quest);
+            //panel.GetComponent<QuestPanel>().SetupQuest(quest);
             questVisualization.Add(quest, panel);
         }
 
         public void CompleteQuest(QuestData quest)
         {
-            Wallet.Instance.EarnMoney(quest.moneyReward);
+            //Wallet.Instance.EarnMoney(quest.moneyReward);
             if (quest.itemReward.quantity != 0 || quest.itemReward.item != null)
             {
                 Inventory.Instance.AddToInventory(quest.itemReward.item, quest.itemReward.quantity);
@@ -52,8 +52,8 @@ namespace Quests.System
         {
             foreach (GameObject quest in questVisualization.Values)
             {
-                QuestPanel panel = quest.GetComponent<QuestPanel>();
-                panel.Notify();
+                //QuestPanel panel = quest.GetComponent<QuestPanel>();
+                //panel.Notify();
             }
         }
     }

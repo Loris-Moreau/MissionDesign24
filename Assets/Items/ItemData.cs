@@ -9,7 +9,7 @@ namespace Items
         public Guid UID;
         public string label;
         public Sprite icon;
-    
+
         private void OnValidate()
         {
 #if UNITY_EDITOR
