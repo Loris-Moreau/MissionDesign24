@@ -8,10 +8,10 @@ namespace Items
         public ItemData item;
         public int quantity = 0;
 
-        public QuestItem(ItemData data, int qtt = 1)
+        public QuestItem(ItemData data, int _quantity = 1)
         {
             item = data;
-            quantity = qtt;
+            quantity = _quantity;
         }
     }
 }

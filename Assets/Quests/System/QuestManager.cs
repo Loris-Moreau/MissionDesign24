@@ -35,7 +35,7 @@ namespace Quests.System
             //Wallet.Instance.EarnMoney(quest.moneyReward);
             if (quest.itemReward.quantity != 0 || quest.itemReward.item != null)
             {
-                Inventory.Instance.AddToInventory(quest.itemReward.item, quest.itemReward.quantity);
+                Inventory.Inventory.Instance.AddToInventory(quest.itemReward.item, quest.itemReward.quantity);
             }
         
             Notify();

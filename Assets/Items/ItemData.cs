@@ -13,11 +13,10 @@ namespace Items
         private void OnValidate()
         {
 #if UNITY_EDITOR
-            if (UID == Guid.Empty)
-            {
-                UID = Guid.NewGuid();
-                UnityEditor.EditorUtility.SetDirty(this);
-            }
+            if (UID != Guid.Empty) return;
+            
+            UID = Guid.NewGuid();
+            UnityEditor.EditorUtility.SetDirty(this);
 #endif
         }
 

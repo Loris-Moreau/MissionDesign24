@@ -11,7 +11,7 @@ namespace Quests.System
         public string title, shortDescription;
         [TextArea] public string description;
         [TextArea] public string thankYouMessage;
-
+        
         [TextArea] public string reward;
 
         public List<QuestItem> requirements = new List<QuestItem>();
