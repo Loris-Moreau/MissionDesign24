@@ -1,70 +1,69 @@
 using System.Collections.Generic;
-using Items;
+using UnityEngine;
 
-namespace Quests.System
+public class QuestNpc : Interactive
 {
-    public class QuestNpc : Interactive
+    public List<QuestData> quests = new List<QuestData>();
+    protected bool gaveQuest = false;
+    protected int current = 0;
+
+    public override void OnInteraction()
     {
-        public List<QuestData> quests = new List<QuestData>();
-        protected bool gaveQuest = false;
-        protected int current = 0;
+        transform.LookAt(Inventory.Instance.transform.position);
 
-        public override void OnInteraction()
+        if (gaveQuest)
         {
-            transform.LookAt(Inventory.Instance.transform.position);
-            
-            if (gaveQuest)
-            {
-                ThanksMessage();
-            }
-            else if (quests.Count > 0 && current < quests.Count)
-            {
-                //QuestGivingUI.Instance.SetupQuest(quests[current], this);
-            }
-        
-            //PlayerInteraction.Instance.StopInteractive();
+            ThanksMessage();
         }
-    
-        public virtual void GiveQuest()
+        else if (quests.Count > 0 && current < quests.Count)
         {
-            if (quests.Count > 0 && current < quests.Count)
-            {            
-                gaveQuest = true;
-                waitForObject = true;
-            
-                //Setting up requirements to finish quests
-                foreach (QuestItem item in quests[current].requirements)
-                {
-                    requiredItems.Add(item);
-                }
-                QuestManager.Instance.TakeQuest(quests[current]);
-            }
+            //QuestGivingUI.Instance.SetupQuest(quests[current], this);
         }
 
-        void ThanksMessage()
+        //PlayerInteraction.Instance.StopInteractive();
+    }
+
+    public virtual void GiveQuest()
+    {
+        if (quests.Count > 0 && current < quests.Count)
         {
-            //QuestGivingUI.Instance.ThankYou(quests[current]);
-            FinishQuest();
+            gaveQuest = true;
+            waitForObject = true;
+
+            //Setting up requirements to finish quests
+            foreach (QuestItem item in quests[current].requirements)
+            {
+                requiredItems.Add(item);
+            }
+
+            QuestManager.Instance.TakeQuest(quests[current]);
+        }
+    }
+
+    void ThanksMessage()
+    {
+        //QuestGivingUI.Instance.ThankYou(quests[current]);
+        FinishQuest();
+    }
+
+    public virtual void FinishQuest()
+    {
+        //Dialogue end quest
+        foreach (QuestItem required in quests[current].requirements)
+        {
+            Inventory.Instance.RemoveFromInventory(required);
         }
 
-        public virtual void FinishQuest()
-        {
-            //Dialogue end quest
-            foreach (QuestItem required in quests[current].requirements)
-            {
-                Inventory.Instance.RemoveFromInventory(required);
-            }
-            QuestManager.Instance.CompleteQuest(quests[current]);
-        
-            waitForObject = false;
-            requiredItems.Clear();
-            current++;
-            gaveQuest = false;
+        QuestManager.Instance.CompleteQuest(quests[current]);
 
-            if(current == quests.Count)
-            {
-                Destroy(this);
-            }
+        waitForObject = false;
+        requiredItems.Clear();
+        current++;
+        gaveQuest = false;
+
+        if (current == quests.Count)
+        {
+            Destroy(this);
         }
     }
 }

@@ -1,4 +1,3 @@
-using Items;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,8 +22,7 @@ public class Inventory : MonoBehaviour
     {
          inventoryCount = 0;
     }
-
-
+    
     void Update()
     {
         for (int i = 0; i < inventoryCount; i++)

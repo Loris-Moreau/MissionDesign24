@@ -1,15 +1,12 @@
 using System;
 
-namespace Items
+[Serializable]
+public class QuestItem
 {
-    [Serializable]
-    public class QuestItem
+    public ItemData item;
+
+    public QuestItem(ItemData data)
     {
-        public ItemData item;
-        
-        public QuestItem(ItemData data)
-        {
-            item = data;
-        }
+        item = data;
     }
 }
