@@ -12,10 +12,10 @@ public class QuestData : ScriptableObject
     [TextArea] public string thankYouMessage;
     
     public List<QuestItem> requirements = new List<QuestItem>();
-
-    [TextArea] public string reward;
     
     [Header("Rewards")]
+    [TextArea] public string reward;
+    
     //public int amountReward;
     public QuestItem itemReward;
 }
