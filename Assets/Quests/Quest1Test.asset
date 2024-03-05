@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
+  m_Name: Quest1Test
+  m_EditorClassIdentifier: 
+  title: Quest of Testing
+  shortDescription: Test Quest
+  description: 'This is a Test Quest.
+
+    A Quest of Testing if you Will.
+
+
+    Just
+    Get me a Tomato.'
+  thankYouMessage: 'HahahAhaAHAahHAHAhAHHAhAHHHaHAhHA
+
+
+    It Works.'
+  requirements:
+  - item: {fileID: 11400000, guid: 81e494edcd2d7534498f632785f3a7ea, type: 2}
+  reward: 'Some Info
+
+    Don''t Tell The Gov'
+  itemReward:
+    item: {fileID: 11400000, guid: e54b56e846142c0448bb0d00a1d866ba, type: 2}
