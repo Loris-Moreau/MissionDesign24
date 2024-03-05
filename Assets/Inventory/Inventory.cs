@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public Inventory Instance;
+    public static Inventory Instance;
 
     public List<QuestItem> inventory;
     public QuestItem soTest;
@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < inventoryCount; i++)
         {
-            Instantiate(inventory[i].sprite, displayInv[inventoryCount-1]);
+            //Instantiate(inventory[i].sprite, displayInv[inventoryCount-1]);
             Debug.Log("Display inventaire");
         }
         if (Input.GetKey(KeyCode.Space))

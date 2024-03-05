@@ -11,7 +11,7 @@ namespace Quests.System
 
         public override void OnInteraction()
         {
-            transform.LookAt(Inventory.Inventory.Instance.transform.position);
+            transform.LookAt(Inventory.Instance.transform.position);
             
             if (gaveQuest)
             {
@@ -22,7 +22,7 @@ namespace Quests.System
                 //QuestGivingUI.Instance.SetupQuest(quests[current], this);
             }
         
-            PlayerInteraction.Instance.StopInteractive();
+            //PlayerInteraction.Instance.StopInteractive();
         }
     
         public virtual void GiveQuest()
@@ -52,7 +52,7 @@ namespace Quests.System
             //Dialogue end quest
             foreach (QuestItem required in quests[current].requirements)
             {
-                Inventory.Inventory.Instance.RemoveFromInventory(required.item, required.quantity);
+                Inventory.Instance.RemoveFromInventory(required);
             }
             QuestManager.Instance.CompleteQuest(quests[current]);
         

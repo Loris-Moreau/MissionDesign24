@@ -33,9 +33,9 @@ namespace Quests.System
         public void CompleteQuest(QuestData quest)
         {
             //Wallet.Instance.EarnMoney(quest.moneyReward);
-            if (quest.itemReward.quantity != 0 || quest.itemReward.item != null)
+            if (/*quest.itemReward.quantity != 0 ||*/ quest.itemReward.item != null)
             {
-                Inventory.Inventory.Instance.AddToInventory(quest.itemReward.item, quest.itemReward.quantity);
+                Inventory.Instance.AddInventory(quest.itemReward);
             }
         
             Notify();
@@ -50,11 +50,11 @@ namespace Quests.System
     
         public void Notify()
         {
-            foreach (GameObject quest in questVisualization.Values)
+            /*foreach (GameObject quest in questVisualization.Values)
             {
-                //QuestPanel panel = quest.GetComponent<QuestPanel>();
-                //panel.Notify();
-            }
+                QuestPanel panel = quest.GetComponent<QuestPanel>();
+                panel.Notify();
+            }*/
         }
     }
 }

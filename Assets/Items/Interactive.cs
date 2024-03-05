@@ -5,7 +5,7 @@ namespace Items
 {
     public class Interactive : MonoBehaviour
     {
-        public InteractionType interactionType = InteractionType.PushButton;
+        //public InteractionType interactionType = InteractionType.PushButton;
     
         public bool onlyOnce = true;
 
