@@ -1,23 +1,21 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using Items;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Quests.System
+[CreateAssetMenu(menuName = "Quest System/Quest")]
+public class QuestData : ScriptableObject
 {
-    [CreateAssetMenu(menuName = "Quest System/Quest")]
+    public string title, shortDescription;
+    [TextArea] public string description;
+    [TextArea] public string thankYouMessage;
 
-    public class QuestData : ScriptableObject
-    {
-        public string title, shortDescription;
-        [TextArea] public string description;
-        [TextArea] public string thankYouMessage;
-        
-        [TextArea] public string reward;
+    [TextArea] public string reward;
 
-        public List<QuestItem> requirements = new List<QuestItem>();
+    public List<QuestItem> requirements = new List<QuestItem>();
 
-        [Header("Rewards")]
-        public int moneyReward;
-        public QuestItem itemReward;
-    }
+    [Header("Rewards")]
+    //public int amountReward;
+    public QuestItem itemReward;
 }
