@@ -1,3 +1,5 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,54 +7,44 @@ namespace Character
 {
     public class PlayerController : MonoBehaviour
     {
-        public float speed = 8;
-        public float rotationSpeed = 40;
-        private Vector2 direction;
+        [Header("Player Options")] 
+        public float speed = 5;
+        [Space]
+        
+        [Header("Interaction")]
+        public GameObject interactBox;
+        public float interactBoxTime = 0.2f;
 
+        private Vector2 direction;
 
         void Start() 
         {
-
+            interactBox = GameObject.Find("interactBox");
+            interactBox.SetActive(false);
         }
 
-        void Update()
+        private void Update()
         {
-                RotateWithMouse();
-           
-                MoveWithKeys();
+            transform.position += speed * Time.deltaTime * new Vector3(direction.x, 0, direction.y);
         }
 
-        void RotateWithMouse()
+        public void OnInteract(InputAction.CallbackContext context)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-
-            transform.Rotate(Vector3.up * mouseX * rotationSpeed * Time.deltaTime);
-
-            
-            
-                float newRotationX = Mathf.Clamp(transform.eulerAngles.x - mouseY * rotationSpeed * Time.deltaTime, -90f, 90f);
-                transform.eulerAngles = new Vector3(newRotationX, transform.eulerAngles.y, 0f);
-            
-        }
-        void MoveWithKeys()
-        {
-            
-                transform.Rotate(0, rotationSpeed * Time.deltaTime * direction.x, 0);
-            
-                transform.position += transform.right * (speed * Time.deltaTime * direction.x);
-            
-
-            transform.position += transform.forward * (speed * Time.deltaTime * direction.y);
+            if (context.performed)
+            {
+                interactBox.SetActive(true);
+                Invoke(nameof(DisableInteractBox), interactBoxTime);
+            }
         }
 
-        public void move(InputAction.CallbackContext context)
+        public void Move(InputAction.CallbackContext context)
         {
             direction = context.ReadValue<Vector2>();
-
-
         }
 
-
+        private void DisableInteractBox()
+        {
+            interactBox.SetActive(false);
+        }
     }
 }
