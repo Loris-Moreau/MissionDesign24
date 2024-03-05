@@ -9,8 +9,7 @@ public class Inventory : MonoBehaviour
 
     public List<QuestItem> inventory;
     public QuestItem soTest;
-    public Transform[] displayInv;
-    public int inventoryCapacity;
+    public GameObject[] displayInv;
     public int inventoryCount;
 
     public void Awake()
@@ -25,32 +24,30 @@ public class Inventory : MonoBehaviour
     
     void Update()
     {
-        for (int i = 0; i < inventoryCount; i++)
-        {
-            //Instantiate(inventory[i].sprite, displayInv[inventoryCount-1]);
-            Debug.Log("Display inventaire");
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            AddInventory(soTest);
-        }
-        if (Input.GetKey(KeyCode.N))
-        {
-            RemoveFromInventory(soTest);
-        }
+        //for (int i = 0; i < inventoryCount; i++)
+        //{
+        //    //Instantiate(inventory[i].sprite, displayInv[inventoryCount-1]);
+        //    Debug.Log("Display inventaire");
+        //}
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    AddInventory(soTest);
+        //}
+        //if (Input.GetKey(KeyCode.N))
+        //{
+        //    RemoveFromInventory(soTest);
+        //}
     }
 
     public void AddInventory(QuestItem i)
     {
-        if(inventoryCount == inventoryCapacity)
+        inventoryCount++;
+        Debug.Log("+1 dans l'inventaire !");
+        inventory.Add(i);
+
+        if (!i.item.isInfo)
         {
-            //message erreur
-        }
-        else
-        {
-            inventoryCount++;
-            Debug.Log("+1 dans l'inventaire !");
-            inventory.Add(i);
+            //display ui
         }
     }
 
@@ -65,6 +62,11 @@ public class Inventory : MonoBehaviour
             inventoryCount--;
             Debug.Log("-1 dans l'inventaire !");
             inventory.Remove(i);
+            
+            if(!i.item.isInfo) 
+            {
+                //Supprimer l'ui
+            }
         }
     }
 }
