@@ -11,7 +11,7 @@ public class ItemData : ScriptableObject
     public string label;
     public Sprite icon;
 
-    public bool isInfo = false;
+    public bool isInfo;
     
     private void OnValidate()
     {
