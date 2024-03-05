@@ -11,6 +11,8 @@ public class ItemData : ScriptableObject
     public string label;
     public Sprite icon;
 
+    public bool isInfo = false;
+    
     private void OnValidate()
     {
 #if UNITY_EDITOR
@@ -20,7 +22,7 @@ public class ItemData : ScriptableObject
         UnityEditor.EditorUtility.SetDirty(this);
 #endif
     }
-
+    
     public bool Equals(ItemData data)
     {
         return data != null && UID == data.UID;
