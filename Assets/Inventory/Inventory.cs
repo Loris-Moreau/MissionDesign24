@@ -9,16 +9,11 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance;
 
     public List<QuestItem> inventory;
-    public int inventoryTotalCount;
     public int inventoryObjectCount;
-    public int inventoryIdeaCount;
 
-    public int maxInventory = 10;
+    public int maxObjectInventory = 10;
 
     public ItemData trst;
-    public QuestItem test1;
-    public QuestItem test2;
-    public QuestItem test3;
 
 
     public void Awake()
@@ -28,14 +23,12 @@ public class Inventory : MonoBehaviour
 
     public static int MaxInventory()
     {
-        return Instance.maxInventory;
+        return Instance.maxObjectInventory;
     }
 
     void Start()
     {
-        inventoryTotalCount = 0;
         inventoryObjectCount = 0;
-        inventoryIdeaCount = 0; 
     }
 
     public void TestInventory(InputAction.CallbackContext context)
@@ -54,51 +47,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    /*public void AddInventory(QuestItem i)
-    {
-        if (InventoryUi.Instance.inventory.ContainsKey(i))
-        {
-            Debug.LogWarning("Je suis d�j� full");
-            return;
-        }
-        inventoryTotalCount++;
-        Debug.Log("+1 dans l'inventaire !");
-        inventory.Add(i);
-
-        if (!i.item.isInfo)
-        {
-            inventoryObjectCount++;
-            InventoryUi.Instance.AddInvUI(i);
-        }
-        else if (i.item.isInfo)
-        {
-            inventoryIdeaCount++;
-        }
-    }
-
-    public void RemoveFromInventory(QuestItem i)
-    {
-        if (inventoryTotalCount == 0)
-        {
-            //message erreur
-        }
-        else
-        {
-            inventoryTotalCount--;
-            Debug.Log("-1 dans l'inventaire !");
-            inventory.Remove(i);
-            
-            if(!i.item.isInfo) 
-            {
-                InventoryUi.Instance.RemoveInvUI(i);
-                inventoryObjectCount--;
-            }
-            else if (i.item.isInfo)
-            {
-                inventoryIdeaCount--;
-            }
-        }
-    }*/
     
     public void RemoveFromInventory(ItemData item)
     {
@@ -106,6 +54,12 @@ public class Inventory : MonoBehaviour
         if (found >= 0)
         {
             inventory.RemoveAt(found);
+            if (!item.isInfo)
+            {
+                InventoryUi.Instance.RemoveInvUI(item);
+            }
+            inventoryObjectCount--;
+            
         }
     }
     
@@ -115,6 +69,11 @@ public class Inventory : MonoBehaviour
         if (found < 0)
         {
             inventory.Add(new QuestItem(item));
+            if (!item.isInfo)
+            {
+                InventoryUi.Instance.AddInvUI(item);
+            }
+            inventoryObjectCount++;
         }
     }
     public int GetItemIndex(ItemData questItem)
