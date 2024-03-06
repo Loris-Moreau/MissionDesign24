@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
 
     public int maxInventory = 10;
 
-    public QuestItem trst;
+    public ItemData trst;
     public QuestItem test1;
     public QuestItem test2;
     public QuestItem test3;
@@ -54,11 +54,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddInventory(QuestItem i)
+    /*public void AddInventory(QuestItem i)
     {
         if (InventoryUi.Instance.inventory.ContainsKey(i))
         {
-            Debug.LogWarning("Je suis déjà full");
+            Debug.LogWarning("Je suis dï¿½jï¿½ full");
             return;
         }
         inventoryTotalCount++;
@@ -98,5 +98,41 @@ public class Inventory : MonoBehaviour
                 inventoryIdeaCount--;
             }
         }
+    }*/
+    
+    public void RemoveFromInventory(ItemData item)
+    {
+        int found = inventory.FindIndex(q => q.item != null && q.item.Equals(item));
+        if (found >= 0)
+        {
+            inventory.RemoveAt(found);
+        }
+    }
+    
+    public void AddInventory(ItemData item)
+    {
+        int found = inventory.FindIndex(q => q.item.Equals(item));
+        if (found < 0)
+        {
+            inventory.Add(new QuestItem(item));
+        }
+    }
+    public int GetItemIndex(ItemData questItem)
+    {
+        return inventory.FindIndex(q => q.item.Equals(questItem));
+    }
+    
+    public bool HasEveryItem(List<QuestItem> requiredItems)
+    {
+        foreach (QuestItem item in requiredItems)
+        {
+            int index = GetItemIndex(item.item);
+            if (index == -1)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
