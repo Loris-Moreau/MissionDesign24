@@ -10,7 +10,7 @@ public class ItemData : ScriptableObject
 {
     public Guid UID;
     public string label;
-    public Image icon;
+    public Sprite icon;
 
     public bool isInfo;
     
