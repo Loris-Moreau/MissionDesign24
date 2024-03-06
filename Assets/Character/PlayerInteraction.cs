@@ -37,6 +37,10 @@ public class PlayerInteraction : MonoBehaviour
                 Invoke("Pickup", 1f);
             }
         }
+        else if (_interactive /*!= InteractionType.Pickup*/)
+        {
+            Invoke("Interact", 1f);
+        }
     }
 
     private bool IsPickableNeeded()
@@ -121,12 +125,12 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    private void StopInteractive()
+    public void StopInteractive()
     {
-        //stop interactive anim
+        //SetInteraction(InteractionType.None);
         _interactive = null;
     }
-
+    
     private void DisableInteractive()
     {
         _interactive.GetComponent<Collider>().enabled = false;
