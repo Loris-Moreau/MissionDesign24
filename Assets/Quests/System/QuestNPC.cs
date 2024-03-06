@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public class QuestNpc : Interactive
 {
@@ -20,7 +19,7 @@ public class QuestNpc : Interactive
             //QuestGivingUI.Instance.SetupQuest(quests[current], this);
         }
 
-        //PlayerInteraction.Instance.StopInteractive();
+        PlayerInteraction.Instance.StopInteractive();
     }
 
     public virtual void GiveQuest()

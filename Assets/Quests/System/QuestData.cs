@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Quest System/Quest")]
 public class QuestData : ScriptableObject
@@ -16,6 +13,5 @@ public class QuestData : ScriptableObject
     [Header("Rewards")]
     [TextArea] public string reward;
     
-    //public int amountReward;
     public QuestItem itemReward;
 }

@@ -30,7 +30,6 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteQuest(QuestData quest)
     {
-        //Wallet.Instance.EarnMoney(quest.amountReward);
         if ( /*quest.itemReward.quantity != 0 ||*/ quest.itemReward.item != null)
         {
             Inventory.Instance.AddInventory(quest.itemReward.item);
