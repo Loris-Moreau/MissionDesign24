@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Quest System/Item")]
 public class ItemData : ScriptableObject
 {
     public Guid UID;
     public string label;
-    public Sprite icon;
+    public Image icon;
 
     public bool isInfo;
     
