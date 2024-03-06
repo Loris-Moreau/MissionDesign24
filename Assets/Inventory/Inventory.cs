@@ -2,70 +2,100 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
     public List<QuestItem> inventory;
-    public QuestItem soTest;
-    public GameObject[] displayInv;
-    public int inventoryCount;
+    public int inventoryTotalCount;
+    public int inventoryObjectCount;
+    public int inventoryIdeaCount;
+
+    public int maxInventory = 10;
+
+    public QuestItem trst;
+    public QuestItem test1;
+    public QuestItem test2;
+    public QuestItem test3;
+
 
     public void Awake()
     {
         Instance = this;
     }
 
+    public static int MaxInventory()
+    {
+        return Instance.maxInventory;
+    }
+
     void Start()
     {
-         inventoryCount = 0;
+        inventoryTotalCount = 0;
+        inventoryObjectCount = 0;
+        inventoryIdeaCount = 0; 
     }
-    
-    void Update()
+
+    public void TestInventory(InputAction.CallbackContext context)
     {
-        //for (int i = 0; i < inventoryCount; i++)
-        //{
-        //    //Instantiate(inventory[i].sprite, displayInv[inventoryCount-1]);
-        //    Debug.Log("Display inventaire");
-        //}
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    AddInventory(soTest);
-        //}
-        //if (Input.GetKey(KeyCode.N))
-        //{
-        //    RemoveFromInventory(soTest);
-        //}
+        if (context.performed)
+        {
+            AddInventory(trst);
+        }        
+    }
+
+    public void TestRemoveInv(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            RemoveFromInventory(trst);
+        }
     }
 
     public void AddInventory(QuestItem i)
     {
-        inventoryCount++;
+        if (InventoryUi.Instance.inventory.ContainsKey(i))
+        {
+            Debug.LogWarning("Je suis déjà full");
+            return;
+        }
+        inventoryTotalCount++;
         Debug.Log("+1 dans l'inventaire !");
         inventory.Add(i);
 
         if (!i.item.isInfo)
         {
-            //display ui
+            inventoryObjectCount++;
+            InventoryUi.Instance.AddInvUI(i);
+        }
+        else if (i.item.isInfo)
+        {
+            inventoryIdeaCount++;
         }
     }
 
     public void RemoveFromInventory(QuestItem i)
     {
-        if (inventoryCount == 0)
+        if (inventoryTotalCount == 0)
         {
             //message erreur
         }
         else
         {
-            inventoryCount--;
+            inventoryTotalCount--;
             Debug.Log("-1 dans l'inventaire !");
             inventory.Remove(i);
             
             if(!i.item.isInfo) 
             {
-                //Supprimer l'ui
+                InventoryUi.Instance.RemoveInvUI(i);
+                inventoryObjectCount--;
+            }
+            else if (i.item.isInfo)
+            {
+                inventoryIdeaCount--;
             }
         }
     }
