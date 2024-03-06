@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ namespace Character
         public float speed = 5;
         public float mouseSensitivity = 2f;
         private float rotationSpeed = 40;
+        public float gamepadRotationSpeed = 40;
 
         [Space]
         [Header("Interaction")]
@@ -17,6 +19,8 @@ namespace Character
 
         private Vector2 direction;
         private Vector2 movementInput;
+        private Vector2 rotationInput;
+        private bool controller;
 
 
         void Start() 
@@ -27,17 +31,28 @@ namespace Character
 
         private void Update()
         {
-            RotateWithMouse();
+            
             MoveWithKeys();
             transform.position += speed * Time.deltaTime * new Vector3(direction.x, 0, direction.y);
         }
 
+        private void FixedUpdate()
+        {
+            
+            if(controller) RotateWithGamepad();
+            else RotateWithMouse();
+            
+        }
+
+        // Event for Unity
         public void OnInteract(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
                 interactBox.SetActive(true);
                 Invoke(nameof(DisableInteractBox), interactBoxTime);
+                
+                
             }
         }
 
@@ -45,13 +60,40 @@ namespace Character
         {
             movementInput = context.ReadValue<Vector2>();
         }
+
+        public void Inventory(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void Menu(InputAction.CallbackContext context)
+        {
+            
+        }
         
+        public void CameraMove(InputAction.CallbackContext context)
+        {
+            controller = context.control.device is Gamepad;
+
+            rotationInput = context.ReadValue<Vector2>();
+        }    
+        // Others
         void RotateWithMouse()
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-
+            float mouseX = rotationInput.x * mouseSensitivity;
+            float mouseY = rotationInput.y * mouseSensitivity;
+            Debug.Log(mouseX);
             transform.Rotate(Vector3.up * (mouseX * rotationSpeed * Time.deltaTime));
+        }
+
+        void RotateWithGamepad()
+        {
+            Debug.Log(rotationInput);
+            float rotationAmountX = rotationInput.x * gamepadRotationSpeed * Time.deltaTime;
+            //float rotationAmountY = input.y * gamepadRotationSpeed * Time.deltaTime;
+
+            transform.Rotate(Vector3.up * rotationAmountX, Space.World);
+            //transform.Rotate(Vector3.left * rotationAmountY);
         }
         
         void MoveWithKeys()

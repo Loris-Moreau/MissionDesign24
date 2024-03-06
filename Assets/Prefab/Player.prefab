@@ -332,7 +332,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26392359575329223}
         m_TargetAssemblyTypeName: Character.PlayerController, Assembly-CSharp
-        m_MethodName: Look
+        m_MethodName: CameraMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -344,6 +344,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3c104239-668d-425b-9afc-767e039facee
     m_ActionName: Player/MousePos[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 26392359575329223}
+        m_TargetAssemblyTypeName: Character.PlayerController, Assembly-CSharp
+        m_MethodName: Inventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9ea571c0-33ab-445b-a12b-9dcf60b977ac
+    m_ActionName: Player/Inventory[/Keyboard/tab,/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 26392359575329223}
+        m_TargetAssemblyTypeName: Character.PlayerController, Assembly-CSharp
+        m_MethodName: Menu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4f684fe8-92a5-4864-9dc8-eb93ee458a84
+    m_ActionName: Player/Menu / Options[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -362,7 +394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  mouseSensitivity: 25
+  mouseSensitivity: 0.5
+  gamepadRotationSpeed: 300
   interactBox: {fileID: 0}
   interactBoxTime: 0.2
 --- !u!54 &1969771129348886794
