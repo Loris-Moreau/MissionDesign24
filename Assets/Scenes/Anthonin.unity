@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &356652268 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 26392359575329223, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-  m_PrefabInstance: {fileID: 5693335423047132100}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee7fc1e109793244db5925a0cfbcd399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1272742282
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,114 +359,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 26392359575329223, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: mouseSensitivity
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 26392359575329223, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: gamepadRotationSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
-      value: 9ea571c0-33ab-445b-a12b-9dcf60b977ac
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
-      value: 4f684fe8-92a5-4864-9dc8-eb93ee458a84
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
-      value: Player/Inventory[/Keyboard/tab,/Keyboard/i]
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
-      value: Player/Menu / Options[/Keyboard/escape]
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 356652268}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 356652268}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 356652268}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CameraMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Inventory
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Character.PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Character.PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Character.PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5100777387190778652, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5378823070939554912, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -496,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822630874215620163, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.65507054
       objectReference: {fileID: 0}
     - target: {fileID: 7822630874215620163, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -504,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822630874215620163, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7555678
       objectReference: {fileID: 0}
     - target: {fileID: 7822630874215620163, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalRotation.z
@@ -516,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822630874215620163, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -98.15
       objectReference: {fileID: 0}
     - target: {fileID: 7822630874215620163, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
