@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - NPC
+  - Pickable
+  - Interactive
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,6 @@ public class Interactive : MonoBehaviour
     //virtual makes the function changeable in children classes
     public virtual void OnInteraction() 
     { 
-        Debug.LogWarning("This interaction has not been coded yet !");
+       //Hi
     }
 }
