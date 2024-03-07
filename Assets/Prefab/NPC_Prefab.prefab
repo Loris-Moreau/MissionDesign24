@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a2a24a8dbf09a41a0610a231b9a4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onlyOnce: 1
+  onlyOnce: 0
   requiredItems: []
   waitForObject: 0
-  quests: []
+  quests:
+  - {fileID: 11400000, guid: 499bcb5db39f4e043877c719e7605f35, type: 2}
 --- !u!1 &4597676807641308545
 GameObject:
   m_ObjectHideFlags: 0
