@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
   m_Name: VQ02_02
   m_EditorClassIdentifier: 
-  title: 
-  shortDescription: 
+  title: Avenir Incertain
+  objectif: 
   description: 
+  subObjectif: []
   thankYouMessage: 
-  requirements: []
+  requirements:
+  - item: {fileID: 11400000, guid: df19fdadb2b14ef48a278b15d0688368, type: 2}
+  - item: {fileID: 11400000, guid: 618b5d5c39db7954190007cd04d5bfa9, type: 2}
+  - item: {fileID: 11400000, guid: 8730e875bcc530247a435355885be798, type: 2}
   reward: 
   itemReward:
     item: {fileID: 0}

@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
   m_Name: MQ02_02
   m_EditorClassIdentifier: 
-  title: 
-  shortDescription: 
+  title: Pas de quartier
+  objectif: "Trouver une bombe et faire \xE9clater le bar"
   description: 
+  subObjectif:
+  - -Trouver une bombe
+  - "-Faire \xE9clater la bombe dans le bar"
   thankYouMessage: 
-  requirements: []
+  requirements:
+  - item: {fileID: 11400000, guid: 31cca379892c21046b07d5272f03c6bd, type: 2}
   reward: 
   itemReward:
     item: {fileID: 0}

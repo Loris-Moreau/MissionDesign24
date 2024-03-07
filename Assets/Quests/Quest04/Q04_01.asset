@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
   m_Name: Q04_01
   m_EditorClassIdentifier: 
-  title: 
-  shortDescription: 
+  title: "Tireur d'\xE9lite"
+  objectif: Remporter le duel
   description: 
+  subObjectif:
+  - -Gagner au jeu de Waylon
   thankYouMessage: 
-  requirements: []
+  requirements:
+  - item: {fileID: 11400000, guid: 566089c6d967b5c46b5ccb7cfdee6fd5, type: 2}
   reward: 
   itemReward:
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: e7aa33a13b899a945b15ecf8da4a4d63, type: 2}

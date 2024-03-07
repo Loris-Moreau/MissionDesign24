@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
-  m_Name: Q01_02
+  m_Name: MQ02_01
   m_EditorClassIdentifier: 
-  title: Une histoire de mafieux
-  objectif: Trouver Thornton le mafieux et parlez-lui
-  description: "La premi\xE8re \xE9tape sera de trouver et interroger Thornton le
-    mafieux qu'\xE0 affronter Wayne.\r\n"
+  title: "Destin Alambiqu\xE9"
+  objectif: Choisir d'aider les mafieux ou le villages
+  description: 
   subObjectif:
-  - "-Parler \xE0 Thornton"
+  - "-Choisir le camp des mafieux\t"
+  - -Choisir le camp du village
   thankYouMessage: 
-  requirements:
-  - item: {fileID: 11400000, guid: a907a9ac18f8ba4459a24730224e9cac, type: 2}
+  requirements: []
   reward: 
   itemReward:
-    item: {fileID: 11400000, guid: fb13355213b9ab040898a28e1da9ce62, type: 2}
+    item: {fileID: 11400000, guid: 98a1f4275d06d5745acecad14189d4db, type: 2}

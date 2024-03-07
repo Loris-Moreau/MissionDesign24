@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
   m_Name: Q03_01
   m_EditorClassIdentifier: 
-  title: 
-  shortDescription: 
+  title: "Couple en d\xE9tresse"
+  objectif: "Trouver des infos sur le mari et les rapporter \xE0 sa femme"
   description: 
+  subObjectif:
+  - -Trouver les informations
+  - "-Les rapporter \xE0 Elizabeth"
   thankYouMessage: 
-  requirements: []
+  requirements:
+  - item: {fileID: 11400000, guid: f87f1a275a4c7ee4a95e6f2a675dcb2c, type: 2}
   reward: 
   itemReward:
     item: {fileID: 0}

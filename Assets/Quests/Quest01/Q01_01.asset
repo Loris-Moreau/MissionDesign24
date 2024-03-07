@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
   m_Name: Q01_01
   m_EditorClassIdentifier: 
-  title: 
-  shortDescription: 
-  description: 
+  title: "Un myst\xE9rieux village"
+  objectif: "Parler \xE0 Wayne, Maire du village"
+  description: "Le joueur incarne un cowboy vagabond, il se retrouve dans un petit
+    village nomm\xE9 Rapidreach. En arrivant au village il cherche le bar du village
+    pour pouvoir se r\xE9approvisionner et pouvoir se reposer, il aper\xE7oit du
+    coin de l'\u0153il dans une ruelle sombre un homme bless\xE9, Wayne.\r\n"
+  subObjectif:
+  - "- Parler \xE0 Wayne"
   thankYouMessage: 
   requirements: []
   reward: 
   itemReward:
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: a907a9ac18f8ba4459a24730224e9cac, type: 2}
