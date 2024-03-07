@@ -351,14 +351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 6240875078537263593, guid: 3846ba9519b353c428b46dadb02d5655, type: 3}
-      propertyPath: quests.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6240875078537263593, guid: 3846ba9519b353c428b46dadb02d5655, type: 3}
-      propertyPath: quests.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 499bcb5db39f4e043877c719e7605f35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
