@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 26392359575329223}
   - component: {fileID: 1969771129348886794}
   - component: {fileID: 6876848240339084681}
+  - component: {fileID: 372512095967075165}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -394,8 +395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7fc1e109793244db5925a0cfbcd399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  mouseSensitivity: 0.5
+  speed: 8
+  mouseSensitivity: 0.3
   gamepadRotationSpeed: 300
   maxLookUpAngle: 35
   maxLookDownAngle: 60
@@ -425,9 +426,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &6876848240339084681
 MonoBehaviour:
@@ -441,6 +442,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4dafe1fd2942bfb3ee749969efebd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &372512095967075165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378823070939554912}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 2, z: 1.2148645}
+  m_Center: {x: 2.4643282e-10, y: 0, z: 0.10743144}
 --- !u!1 &6394345652204898816
 GameObject:
   m_ObjectHideFlags: 0
