@@ -5,8 +5,8 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance;
 
-    public GameObject questPanelPrefab;
-    public Transform questParent;
+    //public GameObject questPanelPrefab;
+    //public Transform questParent;
 
     public List<QuestData> questsProgress = new List<QuestData>();
     private Dictionary<QuestData, GameObject> questVisualization = new Dictionary<QuestData, GameObject>();
@@ -23,9 +23,9 @@ public class QuestManager : MonoBehaviour
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
-        GameObject panel = Instantiate(questPanelPrefab, questParent);
+        //GameObject panel = Instantiate(questPanelPrefab, questParent);
         //panel.GetComponent<QuestPanel>().SetupQuest(quest);
-        questVisualization.Add(quest, panel);
+        //questVisualization.Add(quest, panel);
     }
 
     public void CompleteQuest(QuestData quest)
@@ -40,8 +40,8 @@ public class QuestManager : MonoBehaviour
 
         if (questVisualization.ContainsKey(quest))
         {
-            Destroy(questVisualization[quest]);
-            questVisualization.Remove(quest);
+            //Destroy(questVisualization[quest]);
+            //questVisualization.Remove(quest);
         }
     }
 
