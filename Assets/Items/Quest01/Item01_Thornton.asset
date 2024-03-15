@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51a2d49fbe69d4a469d1063ebc008833, type: 3}
-  m_Name: Item01_01
+  m_Name: Item01_Thornton
   m_EditorClassIdentifier: 
-  label: "Parler \xE0 Wayne"
+  label: "Parler \xE0 Thornton"
   icon: {fileID: 0}
   isInfo: 1
