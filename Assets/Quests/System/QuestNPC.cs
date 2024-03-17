@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class QuestNpc : Interactive
 {
@@ -8,23 +9,27 @@ public class QuestNpc : Interactive
 
     public override void OnInteraction()
     {
+       
         transform.LookAt(Inventory.Instance.transform.position);
 
         if (gaveQuest)
         {
             ThanksMessage();
         }
-        else if (quests.Count > 0 && current < quests.Count)
-        {
-            //QuestGivingUI.Instance.SetupQuest(quests[current], this);
-        }
+
+        GiveQuest();
+        Debug.Log("j'ai la quete");
+        // else if (quests.Count > 0 && current < quests.Count)
+        // {
+        //     QuestGivingUI.Instance.SetupQuest(quests[current], this);
+        // }
 
         PlayerInteraction.Instance.StopInteractive();
     }
 
     public virtual void GiveQuest()
     {
-        if (quests.Count > 0 && current < quests.Count)
+        if (quests.Count > 0 && current < quests.Count) 
         {
             gaveQuest = true;
             waitForObject = true;

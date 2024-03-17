@@ -27,19 +27,19 @@ public class PlayerInteraction : MonoBehaviour
         _inventory = Inventory.Instance;
     }
 
-    public void Interact(InputAction.CallbackContext context)
+    public void Interact(InputAction.CallbackContext context)  
     {
-        if (context.started && _pickable && IsPickableNeeded())
+        if (context.performed && _pickable)
         {
             if (!_isTaking)
             {
                 _isTaking = true;
-                Invoke("Pickup", 1f);
+                Invoke("Pickup", 0.2f);
             }
         }
         else if (_interactive /*!= InteractionType.Pickup*/)
         {
-            Invoke("Interact", 1f);
+            Invoke("Interact", 0.2f);
         }
     }
 
@@ -84,7 +84,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
-            Invoke("OnFail", 1f);
+            Invoke("OnFail", 0.2f);
         }
     }
 

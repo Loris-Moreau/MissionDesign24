@@ -50,14 +50,14 @@ namespace Character
         }
 
         // Event for Unity
-        public void OnInteract(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                interactBox.SetActive(true);
-                Invoke(nameof(DisableInteractBox), interactBoxTime);
-            }
-        }
+        // public void OnInteract(InputAction.CallbackContext context)
+        // {
+        //     if (context.performed)
+        //     {
+        //         interactBox.SetActive(true);
+        //         Invoke(nameof(DisableInteractBox), interactBoxTime);
+        //     }
+        // }
 
         public void Move(InputAction.CallbackContext context)
         {
