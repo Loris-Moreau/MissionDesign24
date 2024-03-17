@@ -8,9 +8,11 @@ public class QuestUI : MonoBehaviour
 {
     public static QuestUI Instance;
     public QuestData questActive;
+    public GameObject questObject;
 
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questDescription;
+    public TextMeshProUGUI questObjectRequirement;
 
 
     private void Awake()
@@ -21,15 +23,21 @@ public class QuestUI : MonoBehaviour
 
     private void Update()
     {
-        questTitle.text = questActive.title;
-        questDescription.text = questActive.objectif;
-
-        if(questActive.itemReward != null)
+        if (questActive = null)
         {
-            questDescription.fontStyle = FontStyles.Strikethrough;
+            questObject.SetActive(false);
         }
+        else if (questActive != null)
+        {
+            questObject.SetActive(true);
+            questTitle.text = questActive.title;
+            questDescription.text = questActive.objectif;
 
+
+            if (questActive.itemReward != null)
+            {
+                questDescription.fontStyle = FontStyles.Strikethrough;
+            }
+        }
     }
-
-
 }
