@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
   m_Name: Q04_01
   m_EditorClassIdentifier: 
-  title: "Tireur d'\xE9lite"
-  objectif: Remporter le duel
+  title: "Un \xE9trange petit gar\xE7on"
+  objectif: Retrouver l'enfant
   description: 
   subObjectif:
-  - -Gagner au jeu de Waylon
+  - "-Trouver o\xF9 se cache l'enfant"
   thankYouMessage: 
-  requirements:
-  - item: {fileID: 11400000, guid: 566089c6d967b5c46b5ccb7cfdee6fd5, type: 2}
-  reward: 
+  requirements: []
+  reward: "Le PNJ vous f\xE9licite de l\u2019avoir retrouv\xE9 et vous demande soudainement
+    pourquoi vous vous emb\xEAtez \xE0 \xEAtre acteur de ce t\xE9l\xE9film \xE0 bas
+    budget, vous proposant par la suite de vous amuser avec le jeu \u201CSuper Duper
+    Duck From The West\u201D.\r\nBrisant le 4\xE8me mur en s\u2019adressant directement
+    au joueur."
   itemReward:
-    item: {fileID: 11400000, guid: e7aa33a13b899a945b15ecf8da4a4d63, type: 2}
+    item: {fileID: 0}
