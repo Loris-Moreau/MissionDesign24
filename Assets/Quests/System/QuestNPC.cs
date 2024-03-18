@@ -9,7 +9,6 @@ public class QuestNpc : Interactive
 
     public override void OnInteraction()
     {
-       
         transform.LookAt(Inventory.Instance.transform.position);
 
         if (gaveQuest)
@@ -19,17 +18,19 @@ public class QuestNpc : Interactive
 
         GiveQuest();
         Debug.Log("j'ai la quete");
-        // else if (quests.Count > 0 && current < quests.Count)
-        // {
-        //     QuestGivingUI.Instance.SetupQuest(quests[current], this);
-        // }
+        
+        /*if (quests.Count > 0 && current < quests.Count)
+        {
+
+            QuestUI.Instance.SetupQuest(quests[current], this);
+        }*/
 
         PlayerInteraction.Instance.StopInteractive();
     }
 
     public virtual void GiveQuest()
     {
-        if (quests.Count > 0 && current < quests.Count) 
+        if (quests.Count > 0 && current < quests.Count)
         {
             gaveQuest = true;
             waitForObject = true;
@@ -39,11 +40,11 @@ public class QuestNpc : Interactive
             {
                 requiredItems.Add(item);
             }
-
+            
             QuestManager.Instance.TakeQuest(quests[current]);
         }
     }
-
+    
     void ThanksMessage()
     {
         //QuestGivingUI.Instance.ThankYou(quests[current]);
@@ -68,6 +69,10 @@ public class QuestNpc : Interactive
         if (current == quests.Count)
         {
             Destroy(this);
+        }
+        else
+        {
+            Invoke("GiveQuest", 1f);
         }
     }
 }

@@ -64,7 +64,6 @@ GameObject:
   - component: {fileID: 3768380114004358606}
   - component: {fileID: 6955661052415264212}
   - component: {fileID: 3807469738039231644}
-  - component: {fileID: 1691695804687511169}
   m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
@@ -81,8 +80,8 @@ Transform:
   m_GameObject: {fileID: 5213537318372534969}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 0.542, z: 0.466}
-  m_LocalScale: {x: 0.5126186, y: 0.1327271, z: 0.1327271}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0.45}
+  m_LocalScale: {x: 0.5, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7822630874215620163}
@@ -137,27 +136,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1691695804687511169
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5213537318372534969}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5378823070939554912
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,9 +294,9 @@ MonoBehaviour:
     m_ActionName: Player/Movement[/Keyboard/z,/Keyboard/s,/Keyboard/q,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 26392359575329223}
-        m_TargetAssemblyTypeName: Character.PlayerController, Assembly-CSharp
-        m_MethodName: OnInteract
+      - m_Target: {fileID: 6876848240339084681}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: Interact
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -396,12 +374,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  mouseSensitivity: 0.3
+  mouseSensitivity: 0.4
   gamepadRotationSpeed: 300
   maxLookUpAngle: 35
   maxLookDownAngle: 60
-  fpsCamera: {fileID: 0}
-  interactBox: {fileID: 0}
+  fpsCamera: {fileID: 6394345652204898816}
+  interactBox: {fileID: 830701353036744044}
   interactBoxTime: 0.2
 --- !u!54 &1969771129348886794
 Rigidbody:
@@ -457,12 +435,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000002, y: 2, z: 1.2148645}
-  m_Center: {x: 2.4643282e-10, y: 0, z: 0.10743144}
+  m_Size: {x: 1.0000002, y: 2, z: 1.25}
+  m_Center: {x: 2.5, y: 0, z: 0.15}
 --- !u!1 &6394345652204898816
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 6394345652204898816}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.549, z: 0.265}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0.265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -529,7 +507,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 85
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

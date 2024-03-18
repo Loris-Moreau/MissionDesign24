@@ -20,10 +20,9 @@ public class QuestUI : MonoBehaviour
         Instance = this;
     }
     
-
     private void Update()
     {
-        if (questActive = null)
+        if (questActive == null)
         {
             questObject.SetActive(false);
         }
@@ -32,8 +31,7 @@ public class QuestUI : MonoBehaviour
             questObject.SetActive(true);
             questTitle.text = questActive.title;
             questDescription.text = questActive.objectif;
-
-
+            
             if (questActive.itemReward != null)
             {
                 questDescription.fontStyle = FontStyles.Strikethrough;
