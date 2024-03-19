@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     private Inventory _inventory;
     private Pickable _pickable;
     private Interactive _interactive;
+    private QuestNpc _npc;
 
     private bool _isTaking;
 
@@ -109,6 +110,11 @@ public class PlayerInteraction : MonoBehaviour
                 _interactive = interactive;
                 //Set Anim(InteractionType) Here
             }
+        }
+        else if (other.transform.CompareTag("NPC"))
+        {
+            _npc = other.GetComponentInChildren<QuestNpc>();
+            _npc.OnInteraction();
         }
     }
 

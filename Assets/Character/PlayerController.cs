@@ -31,7 +31,7 @@ namespace Character
         {
             interactBox = GameObject.Find("interactBox");
             fpsCamera = GameObject.Find("FPSCamera");
-            interactBox.SetActive(false);
+            interactBox?.SetActive(false);
         }
 
         private void Update()
