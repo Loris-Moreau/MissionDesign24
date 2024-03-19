@@ -7684,7 +7684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830701353036744044, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830701353036744044, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
+      propertyPath: m_TagString
+      value: interactBox
       objectReference: {fileID: 0}
     - target: {fileID: 2129981611977168135, guid: f66fc883cc4abc34483593be15b24fa2, type: 3}
       propertyPath: m_LocalScale.x

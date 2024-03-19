@@ -15,11 +15,6 @@ namespace Character
         public float maxLookDownAngle = 80f;
         public GameObject fpsCamera;
 
-        [Space]
-        [Header("Interaction")]
-        public GameObject interactBox;
-        public float interactBoxTime = 0.2f;
-
         private Vector2 direction;
         private Vector2 movementInput;
         private Vector2 rotationInput;
@@ -29,9 +24,7 @@ namespace Character
         
         void Start() 
         {
-            interactBox = GameObject.Find("interactBox");
             fpsCamera = GameObject.Find("FPSCamera");
-            interactBox?.SetActive(false);
         }
 
         private void Update()
@@ -41,16 +34,6 @@ namespace Character
             if(controller) RotateWithGamepad();
             else RotateWithMouse();
         }
-
-        // Event for Unity
-        // public void OnInteract(InputAction.CallbackContext context)
-        // {
-        //     if (context.performed)
-        //     {
-        //         interactBox.SetActive(true);
-        //         Invoke(nameof(DisableInteractBox), interactBoxTime);
-        //     }
-        // }
 
         public void Move(InputAction.CallbackContext context)
         {
@@ -100,7 +83,7 @@ namespace Character
             transform.Rotate(Vector3.up * rotationAmountX, Space.Self);
             //transform.Rotate(Vector3.left * rotationAmountY);
         }
-        
+
         void MoveWithKeys()
         {
             Quaternion cameraRotation = Camera.main.transform.rotation;
@@ -112,15 +95,8 @@ namespace Character
             //     transform.forward.z * moveDirection.z);
             //
             // Debug.Log(moveDirection);
-            
+
             transform.Translate(moveDirection * (speed * Time.deltaTime), Space.Self);
         }
-
-
-        private void DisableInteractBox()
-        {
-            interactBox.SetActive(false);
-        }
-        
     }
 }

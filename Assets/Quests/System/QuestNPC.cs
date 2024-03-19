@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class QuestNpc : Interactive
@@ -6,6 +8,17 @@ public class QuestNpc : Interactive
     public List<QuestData> quests = new List<QuestData>();
     protected bool gaveQuest = false;
     protected int current = 0;
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        
+        if (collision.tag == "interactBox")
+        {
+            //print("BOB");
+            OnInteraction();
+        }
+
+    }
 
     public override void OnInteraction()
     {
@@ -17,7 +30,6 @@ public class QuestNpc : Interactive
         }
         
         GiveQuest();
-        Debug.Log("Insanity");
         
         /*if (quests.Count > 0 && current < quests.Count)
         {
@@ -42,6 +54,7 @@ public class QuestNpc : Interactive
             }
             
             QuestManager.Instance.TakeQuest(quests[current]);
+            Debug.Log("Insanity");
         }
     }
     

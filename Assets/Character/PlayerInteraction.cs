@@ -12,9 +12,15 @@ public class PlayerInteraction : MonoBehaviour
     private QuestNpc _npc;
 
     private bool _isTaking;
+    
+    [Header("Interaction")]
+    public GameObject interactBox;
+    public float interactBoxTime = 0.2f;
 
     private void Start()
     {
+        interactBox = GameObject.Find("interactBox");
+        interactBox.SetActive(false);
         if (Instance) Destroy(this);
         else Instance = this;
 
@@ -30,6 +36,11 @@ public class PlayerInteraction : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)  
     {
+        if (context.performed)
+        {
+            interactBox.SetActive(true);
+            Invoke(nameof(DisableInteractBox), interactBoxTime);
+        }
         if (context.performed && _pickable)
         {
             if (!_isTaking)
@@ -144,4 +155,10 @@ public class PlayerInteraction : MonoBehaviour
         Destroy(_interactive);
         //Anim Here (InteractionType.None)
     }
+    
+    private void DisableInteractBox()
+    {
+        interactBox.SetActive(false);
+    }
+    
 }
