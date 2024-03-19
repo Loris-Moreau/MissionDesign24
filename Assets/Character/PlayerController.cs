@@ -42,13 +42,6 @@ namespace Character
             else RotateWithMouse();
         }
 
-        private void FixedUpdate()
-        {
-            
-            
-            
-        }
-
         // Event for Unity
         // public void OnInteract(InputAction.CallbackContext context)
         // {

@@ -9,15 +9,15 @@ public class QuestNpc : Interactive
 
     public override void OnInteraction()
     {
-        transform.LookAt(Inventory.Instance.transform.position);
+        //transform.LookAt(Inventory.Instance.transform.position);
 
         if (gaveQuest)
         {
             ThanksMessage();
         }
-
+        
         GiveQuest();
-        Debug.Log("j'ai la quete");
+        Debug.Log("Insanity");
         
         /*if (quests.Count > 0 && current < quests.Count)
         {

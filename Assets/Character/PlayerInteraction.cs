@@ -40,7 +40,12 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if (_interactive /*!= InteractionType.Pickup*/)
         {
-            Invoke("Interact", 0.2f);
+            Invoke("Interacted", 0.2f);
+        }
+        else if (transform.CompareTag("NPC"))
+        {
+            _npc = GetComponent<QuestNpc>();
+            _npc.OnInteraction();
         }
     }
 
@@ -73,7 +78,7 @@ public class PlayerInteraction : MonoBehaviour
         _isTaking = false;
     }
 
-    private void Interact()
+    private void Interacted()
     {
         if (_inventory.HasEveryItem(_interactive.requiredItems))
         {
@@ -87,6 +92,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             Invoke("OnFail", 0.2f);
         }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -110,11 +116,6 @@ public class PlayerInteraction : MonoBehaviour
                 _interactive = interactive;
                 //Set Anim(InteractionType) Here
             }
-        }
-        else if (other.transform.CompareTag("NPC"))
-        {
-            _npc = other.GetComponentInChildren<QuestNpc>();
-            _npc.OnInteraction();
         }
     }
 
