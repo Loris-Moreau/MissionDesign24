@@ -160,5 +160,4 @@ public class PlayerInteraction : MonoBehaviour
     {
         interactBox.SetActive(false);
     }
-    
 }

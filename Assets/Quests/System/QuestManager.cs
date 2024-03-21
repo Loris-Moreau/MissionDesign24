@@ -19,10 +19,11 @@ public class QuestManager : MonoBehaviour
         }
         else Instance = this;
     }
-
+    
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
+        print("quest taken");
         //GameObject panel = Instantiate(questPanelPrefab, questParent);
         //panel.GetComponent<QuestPanel>().SetupQuest(quest);
         //questVisualization.Add(quest, panel);

@@ -22,9 +22,9 @@ public class QuestNpc : Interactive
 
     public override void OnInteraction()
     {
-        //transform.LookAt(Inventory.Instance.transform.position);
+        transform.LookAt(Inventory.Instance.transform.position);
 
-        if (gaveQuest)
+        if (gaveQuest && Inventory.Instance.HasEveryItem(requiredItems))
         {
             ThanksMessage();
         }
