@@ -12,7 +12,7 @@ public class QuestNpc : Interactive
     private void OnTriggerEnter(Collider collision)
     {
         
-        if (collision.tag == "interactBox")
+        if (collision.CompareTag("interactBox"))
         {
             //print("BOB");
             OnInteraction();
@@ -28,12 +28,14 @@ public class QuestNpc : Interactive
         {
             ThanksMessage();
         }
-        
-        GiveQuest();
+
+        if (!gaveQuest)
+        {
+            GiveQuest();
+        }
         
         /*if (quests.Count > 0 && current < quests.Count)
         {
-
             QuestUI.Instance.SetupQuest(quests[current], this);
         }*/
 
@@ -46,14 +48,15 @@ public class QuestNpc : Interactive
         {
             gaveQuest = true;
             waitForObject = true;
-
+            
+            QuestManager.Instance.TakeQuest(quests[current]);
+            
             //Setting up requirements to finish quests
             foreach (QuestItem item in quests[current].requirements)
             {
                 requiredItems.Add(item);
             }
             
-            QuestManager.Instance.TakeQuest(quests[current]);
             Debug.Log("Insanity");
         }
     }
@@ -70,6 +73,7 @@ public class QuestNpc : Interactive
         foreach (QuestItem required in quests[current].requirements)
         {
             Inventory.Instance.RemoveFromInventory(required.item);
+            //Inventory.Instance.RemoveFromInventory(requiredItems);
         }
 
         QuestManager.Instance.CompleteQuest(quests[current]);

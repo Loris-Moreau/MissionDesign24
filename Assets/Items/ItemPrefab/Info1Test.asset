@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a2d49fbe69d4a469d1063ebc008833, type: 3}
   m_Name: Info1Test
   m_EditorClassIdentifier: 
-  label: Test Info
+  label: 'Test '
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   isInfo: 0

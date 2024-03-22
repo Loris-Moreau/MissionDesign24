@@ -7,7 +7,7 @@ public class QuestManager : MonoBehaviour
 
     //public GameObject questPanelPrefab;
     //public Transform questParent;
-
+    
     public List<QuestData> questsProgress = new List<QuestData>();
     private Dictionary<QuestData, GameObject> questVisualization = new Dictionary<QuestData, GameObject>();
 
@@ -50,7 +50,7 @@ public class QuestManager : MonoBehaviour
     {
         /*foreach (GameObject quest in questVisualization.Values)
         {
-            QuestPanel panel = quest.GetComponent<QuestPanel>();
+            QuestUI panel = quest.GetComponent<QuestPanel>();
             panel.Notify();
         }*/
     }
