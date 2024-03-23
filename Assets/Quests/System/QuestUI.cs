@@ -12,6 +12,7 @@ public class QuestUI : MonoBehaviour
 
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questDescription;
+    public TextMeshProUGUI questObjectif;
     public GameObject thankYouGO;
     public float timeTYMessage;
 
@@ -37,12 +38,13 @@ public class QuestUI : MonoBehaviour
         {
             questObject.SetActive(true);
             questTitle.text = questActive.title;
-            questDescription.text = questActive.objectif;
+            questObjectif.text = questActive.objectif;
+            questDescription.text = questActive.description;
 
 
             if (Inventory.Instance.inventory.Contains(questActive.itemReward))
             {
-                questDescription.fontStyle = FontStyles.Strikethrough;
+                questObjectif.fontStyle = FontStyles.Strikethrough;
             }
         }
     }

@@ -13,9 +13,6 @@ public class Inventory : MonoBehaviour
 
     public int maxObjectInventory = 10;
 
-    public ItemData trst;
-
-
     public void Awake()
     {
         Instance = this;
@@ -29,22 +26,6 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         inventoryObjectCount = 0;
-    }
-
-    public void TestInventory(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            AddInventory(trst);
-        }        
-    }
-
-    public void TestRemoveInv(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            RemoveFromInventory(trst);
-        }
     }
 
     

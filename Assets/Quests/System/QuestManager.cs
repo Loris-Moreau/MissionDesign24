@@ -50,6 +50,6 @@ public class QuestManager : MonoBehaviour
 
     public void Notify()
     {
-        QuestUI.Instance.ThankYouMessage();
+        //QuestUI.Instance.ThankYouMessage();
     }
 }
