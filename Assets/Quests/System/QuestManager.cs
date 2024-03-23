@@ -23,6 +23,7 @@ public class QuestManager : MonoBehaviour
     public void TakeQuest(QuestData quest)
     {
         questsProgress.Add(quest);
+        QuestUI.Instance.questActive = quest;
         print("quest taken");
         //GameObject panel = Instantiate(questPanelPrefab, questParent);
         //panel.GetComponent<QuestPanel>().SetupQuest(quest);
@@ -38,6 +39,7 @@ public class QuestManager : MonoBehaviour
 
         Notify();
         questsProgress.Remove(quest);
+        QuestUI.Instance.questActive = null;
 
         if (questVisualization.ContainsKey(quest))
         {
@@ -48,10 +50,6 @@ public class QuestManager : MonoBehaviour
 
     public void Notify()
     {
-        /*foreach (GameObject quest in questVisualization.Values)
-        {
-            QuestUI panel = quest.GetComponent<QuestPanel>();
-            panel.Notify();
-        }*/
+        QuestUI.Instance.ThankYouMessage();
     }
 }
