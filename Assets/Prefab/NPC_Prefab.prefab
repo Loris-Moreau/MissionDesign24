@@ -49,8 +49,7 @@ MonoBehaviour:
   onlyOnce: 1
   requiredItems: []
   waitForObject: 0
-  quests:
-  - {fileID: 11400000, guid: 499bcb5db39f4e043877c719e7605f35, type: 2}
+  quests: []
 --- !u!65 &3905939268326937563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70,8 +69,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 3.6, z: 2.5}
-  m_Center: {x: 0, y: 1.8, z: 0}
+  m_Size: {x: 2.7936096, y: 3.6, z: 2.7089539}
+  m_Center: {x: -0.14680481, y: 1.8, z: -0.10447693}
 --- !u!1 &4597676807641308545
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +133,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31c42bb8664622a4eba73b9736fd6b85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

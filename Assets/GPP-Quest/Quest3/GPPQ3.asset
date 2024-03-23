@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b18b487e7fac54d90ce7d2532a2681, type: 3}
+  m_Name: GPPQ3
+  m_EditorClassIdentifier: 
+  title: Objet perdu
+  objectif: Trouvez le pistolet perdu
+  description: Yellow a perdu son pistolet autour du saloon, retrouve le.
+  subObjectif: []
+  thankYouMessage: Va voir Blue pour te repentir.
+  requirements:
+  - item: {fileID: 11400000, guid: e4fa8e747f6fc0240ba4f7180abfa6b1, type: 2}
+  reward: 
+  itemReward:
+    item: {fileID: 11400000, guid: 6a1cee2ff93a6474dba4ee27f72fda50, type: 2}
