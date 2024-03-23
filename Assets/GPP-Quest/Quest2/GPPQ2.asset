@@ -16,9 +16,11 @@ MonoBehaviour:
   objectif: Tomato !
   description: J'ai besoin d'une tomate en urgence !
   subObjectif: []
-  thankYouMessage: Yellow a besoin de toi !
+  thankYouMessage: '.
+
+'
   requirements:
   - item: {fileID: 11400000, guid: 81e494edcd2d7534498f632785f3a7ea, type: 2}
-  reward: 
+  reward: Yellow a besoin de toi !
   itemReward:
     item: {fileID: 11400000, guid: c2a06f35ab1c1c747afba02361e5d81c, type: 2}
