@@ -16,9 +16,9 @@ MonoBehaviour:
   objectif: Trouvez le pistolet perdu
   description: Yellow a perdu son pistolet autour du saloon, retrouve le.
   subObjectif: []
-  thankYouMessage: Va voir Blue pour te repentir.
+  thankYouMessage: 
   requirements:
   - item: {fileID: 11400000, guid: e4fa8e747f6fc0240ba4f7180abfa6b1, type: 2}
-  reward: 
+  reward: Va voir Blue pour te repentir.
   itemReward:
     item: {fileID: 11400000, guid: 6a1cee2ff93a6474dba4ee27f72fda50, type: 2}
