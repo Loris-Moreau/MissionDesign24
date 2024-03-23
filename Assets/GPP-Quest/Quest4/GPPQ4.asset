@@ -16,8 +16,8 @@ MonoBehaviour:
   objectif: Se repentir
   description: "Parle \xE0 Blue"
   subObjectif: []
-  thankYouMessage: 
+  thankYouMessage: Bravo vous avez fini !
   requirements: []
-  reward: Bravo vous avez fini
+  reward: Bravo vous avez fini !
   itemReward:
     item: {fileID: 0}

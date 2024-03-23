@@ -16,8 +16,8 @@ MonoBehaviour:
   objectif: "Parler \xE0 Green"
   description: Green !
   subObjectif: []
-  thankYouMessage: 
+  thankYouMessage: "Vous devez aller parler \xE0 Red dans le saloon ."
   requirements: []
-  reward: "Vous devez aller parler \xE0 Red."
+  reward: "Vous devez aller parler \xE0 Red dans le saloon ."
   itemReward:
     item: {fileID: 11400000, guid: 5fe2518d1babe4249b63535a2c251dda, type: 2}
